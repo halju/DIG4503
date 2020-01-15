@@ -4,7 +4,7 @@ class Person {
         this.color = color;
     }
     speak() {
-        console.log("Hi!");
+        console.log(chalk.blue("Hi!"));
     }
 }
 module.exports = Person;
