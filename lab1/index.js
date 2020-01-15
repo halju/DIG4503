@@ -1,6 +1,5 @@
 const Person = require("./Person.js");
-const chalk = require("chalk");
 
-let p = new Person("Hal", "Blue");
+let p = new Person("Hal", "blue"); 
 
-console.log(chalk.blue(p.name)); 
+p.speak();
