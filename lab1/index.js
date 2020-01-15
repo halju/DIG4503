@@ -1,4 +1,6 @@
 const Person = require("./Person.js");
 
 let p = new Person("Hal", "Blue");
-console.log(chalk.blue(p.name));
+
+const chalk = require("chalk");
+console.log(chalk.blue(p.name)); 
