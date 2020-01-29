@@ -9,6 +9,6 @@ App.get("/", function(req, res) {
     res.send("Hello world!");
 });
 
-App.listen([port, function() {
+App.listen([port, function()) {
     console.log("Server running!");
-});
+}
