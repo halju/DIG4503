@@ -2,10 +2,10 @@ const Express = require("express");
 const App = Express();
 const port = 8080;
 
-App.use(Express.static("public"));
+App.use(Express.static("public/index.html"));
 
 App.get("/", function(req, res) {
-    res.send("Hello world!");
+    res.send("<p>Hello world!</p>");
 });
 
 App.listen(port, function() {
