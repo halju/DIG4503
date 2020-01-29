@@ -1,5 +1,4 @@
 const Express = require("express");
-const public = require("./public/index.html");
 const App = Express();
 const port = 8080;
 
