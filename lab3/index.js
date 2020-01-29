@@ -1,16 +1,14 @@
 const Express = require("express");
-const public = require("/public/index.html");
+const public = require("./public/index.html");
 const App = Express();
 const port = 8080;
+
+App.use(Express.static("public"));
 
 App.get("/", function(Request, Response) {
     Response.send("Hello world!");
 });
 
-App.get("/public", function(Request, Response) {
-    Request.get(public);
-});
-
-App.listen(port, function() {
+App.listen(port, () => {
     console.log("Server running!");
 });
