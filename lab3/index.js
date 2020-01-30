@@ -6,7 +6,7 @@ App.get("/", function(req, res) {
     res.send("<p>Hello world!</p>");
 });
 
-App.use(Express.static("public"));
+App.use(Express.static("/public"));
 
 App.listen(port, function() {
     console.log("Server running!");
