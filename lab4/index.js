@@ -2,13 +2,11 @@ const Express = require("express");
 const App = Express();
 const port = 80;
 
-App.use("/public", Express.static("public"));
-
-App.get("/", function(req, res) {
-    res.send("Hello world!");
+App.get("/:id", req, res) => {
+    res.send(req.params);
 });
 
-App.listen(port, function() {
+App.listen(port, () => {
     console.log("Server running!");
 });
 
