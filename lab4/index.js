@@ -1,18 +1,13 @@
 const Express = require("express");
 const App = Express();
 const port = 80;
-const chalk = require("chalk");
-const Pokemon = require ("./Pokemon.js");
-const getPokemon = require('json-pokemon/getPokemon');
 
-const pokemons = getPokemon();
-const id = getPokemon.getPokemonById(1);
-const name = getPokemon.getPokemonByName('Bulbasaur');
-pokemons.push(new Pokemon(id, name));
+const chalk = require("chalk");
+const pokemons = require('json-pokemon');
 
 App.get("/id/:id", function(req, res) {
     let result = {"error": "Could not find!"}
-    pokemons.forEach(value, function() {
+    pokemons.forEach(function(value) {
         if(value.id == req.params.id) {
             result = value;
         }
@@ -27,7 +22,7 @@ App.get("/id/:id", function(req, res) {
 
 App.get("/name/:name", function(req, res) {
     let result = {"error": "Could not find!"}
-    pokemons.forEach(value, function() {
+    pokemons.forEach(function(value) {
         if(value.name == req.params.name) {
             result = value;
         }
