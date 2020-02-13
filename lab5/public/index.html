@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab 5</title>
+        <link rel="stylesheet" href="index.css">
+        <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <script>
+            function clicker(event) {
+                event.preventDefault();
+                let element = document.querySelector("#pokemonId");
+                fetch("/id/" + element.value).then((res) => {
+                    return res.json();
+                }).then((processed) => {
+                    let reporting = document.querySelector("#reportingArea");
+                    if(processed.error) {
+                        reporting.innerHTML = processed.error;
+                    } else {
+                        reporting.innerHTML = processed.name;
+                    }
+                });
+            }
+            function clicker2(event) {
+                event.preventDefault();
+                let element2 = document.querySelector("#pokemonName");
+                fetch("/name/" + element2.value).then((res) => {
+                    return res.json();
+                }).then((processed) => {
+                    let reporting2 = document.querySelector("#reportingArea");
+                    if(processed.error) {
+                        reporting2.innerHTML = processed.error;
+                    } else {
+                        reporting2.innerHTML = processed.name;
+                    }
+                });
+            }
+        </script>
+        <div class="form">
+            <h1>Pokemon Database</h1>
+        </div>
+        <div class="form">
+            <form onsubmit="clicker(event)">
+                <label for="pokemonId">Pokemon ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input id="pokemonId" type="text">
+                <button>Submit</button>
+            </form>
+        </div>
+        <div class="form">
+            <form onsubmit="clicker2(event)">
+                <label for="pokemonName">Pokemon Name:&nbsp;</label>
+                <input id="pokemonName" type="text">
+                <button>Submit</button>
+            </form>
+        </div>
+        <div id="reportingArea"></div>
+    </body>
+</html>
