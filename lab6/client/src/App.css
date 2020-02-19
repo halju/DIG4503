@@ -5,12 +5,18 @@ h1 {
   line-height: 0%;
   color: #0a0a0a;
 }
-
+h2 {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 0%;
+  color: #0a0a0a;
+}
 div.form {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
-  padding: 5px;
-  margin: 0px 5px 5px 5px;
+  padding: 2px;
+  margin: 0px 0px 5px 5px;
   width: 352px;
   color: #0a0a0a;
 }

@@ -1,6 +1,6 @@
 import React from "react";
 
-class NameReader extends React.Component {
+class NameSearch extends React.Component {
   clicker(event) {
     event.preventDefault();
     let element = document.querySelector("#pokemonName");
@@ -15,17 +15,17 @@ class NameReader extends React.Component {
         }
     });
 }
-  render() {
-    return (
-      <div class="form">
-        <form onsubmit="clicker(event)">
-            <label for="pokemonName">Pokemon Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-            <input id="pokemonName" type="text"></input>
-            <button>Submit</button>
-        </form>
-      </div>
-    );
-  } 
+render() {
+  return (
+    <div class="form">
+      <form onsubmit="clicker(event)">
+          <label for="pokemonName">Pokemon Name:&nbsp;</label>
+          <input id="pokemonName" type="text"></input>&nbsp;
+          <button>Submit</button>
+      </form>
+    </div>
+  );
+} 
 }
 
-export default NameReader;
+export default NameSearch;

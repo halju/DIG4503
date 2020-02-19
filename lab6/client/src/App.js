@@ -9,7 +9,7 @@ function App() {
       <div class="form"><h1>Pokemon Database</h1></div>
       <IdSearch />
       <NameSearch />
-      <h2>Reporting</h2>
+      <div class="form"><h2>Reporting</h2></div>
       <div id="reportingArea"></div>
     </div>
   );

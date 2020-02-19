@@ -20,7 +20,7 @@ class IdSearch extends React.Component {
       <div class="form">
         <form onsubmit="clicker(event)">
             <label for="pokemonId">Pokemon ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-            <input id="pokemonId" type="text"></input>
+            <input id="pokemonId" type="text"></input>&nbsp;
             <button>Submit</button>
         </form>
       </div>
