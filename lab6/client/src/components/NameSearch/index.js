@@ -1,10 +1,10 @@
 import React from "react";
 
-class Reader extends React.Component {
+class NameReader extends React.Component {
   clicker(event) {
     event.preventDefault();
-    let element = document.querySelector("#pokemonId");
-    fetch("/id/" + element.value).then((res) => {
+    let element = document.querySelector("#pokemonName");
+    fetch("/name/" + element.value).then((res) => {
         return res.json();
     }).then((processed) => {
         let reporting = document.querySelector("#reportingArea");
@@ -14,13 +14,13 @@ class Reader extends React.Component {
             reporting.innerHTML = processed.name;
         }
     });
-  }
+}
   render() {
     return (
       <div class="form">
         <form onsubmit="clicker(event)">
-            <label for="pokemonId">Pokemon ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-            <input id="pokemonId" type="text"></input>
+            <label for="pokemonName">Pokemon Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input id="pokemonName" type="text"></input>
             <button>Submit</button>
         </form>
       </div>
@@ -28,4 +28,4 @@ class Reader extends React.Component {
   } 
 }
 
-export default Reader;
+export default NameReader;

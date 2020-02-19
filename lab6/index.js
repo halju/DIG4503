@@ -4,7 +4,9 @@ const port = 80;
 
 const chalk = require("chalk");
 const pokemons = require('json-pokemon');
+const cors = require("cors");
 
+App.use(cors());
 App.use(Express.json());
 App.use("/", Express.static("client/build"));
 
