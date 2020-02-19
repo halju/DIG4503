@@ -6,9 +6,7 @@ import './App.css';
 function App() {
   return (
     <div>
-      <div class="form">
-        <h1>Pokemon Database</h1>
-      </div>
+      <div class="form"><h1>Pokemon Database</h1></div>
       <IdSearch />
       <NameSearch />
       <h2>Reporting</h2>
