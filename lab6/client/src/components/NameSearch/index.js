@@ -1,10 +1,10 @@
 import React from "react";
 
 class NameSearch extends React.Component {
-  clicker(event) {
+  NameSearch(event) {
     event.preventDefault();
     let element = document.querySelector("#pokemonName");
-    fetch("/name/" + element.value).then((res) => {
+    fetch("http://localhost:80/name/" + element.value).then((res) => {
         return res.json();
     }).then((processed) => {
         let reporting = document.querySelector("#reportingArea");
@@ -15,17 +15,17 @@ class NameSearch extends React.Component {
         }
     });
 }
-render() {
-  return (
-    <div class="form">
-      <form onsubmit="clicker(event)">
-          <label for="pokemonName">Pokemon Name:&nbsp;</label>
-          <input id="pokemonName" type="text"></input>&nbsp;
+  render() {
+    return (
+      <div className="form">
+        <form onSubmit={this.NameSearch}>
+          <label htmlFor="pokemonName">Pokemon Name:&nbsp;</label>
+          <input id="pokemonName" type="text" />&nbsp;
           <button>Submit</button>
-      </form>
-    </div>
-  );
-} 
+        </form>
+      </div>
+    );
+  } 
 }
 
 export default NameSearch;

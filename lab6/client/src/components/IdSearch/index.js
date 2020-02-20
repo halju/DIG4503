@@ -1,10 +1,10 @@
 import React from "react";
 
 class IdSearch extends React.Component {
-  clicker(event) {
+  IdSearch(event) {
     event.preventDefault();
     let element = document.querySelector("#pokemonId");
-    fetch("/id/" + element.value).then((res) => {
+    fetch("http://localhost:80/id/" + element.value).then((res) => {
         return res.json();
     }).then((processed) => {
         let reporting = document.querySelector("#reportingArea");
@@ -17,11 +17,11 @@ class IdSearch extends React.Component {
   }
   render() {
     return (
-      <div class="form">
-        <form onsubmit="clicker(event)">
-            <label for="pokemonId">Pokemon ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-            <input id="pokemonId" type="text"></input>&nbsp;
-            <button>Submit</button>
+      <div className="form">
+        <form onSubmit={this.IdSearch}>
+          <label htmlFor="pokemonId">Pokemon ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+          <input id="pokemonId" type="text" />&nbsp;
+          <button>Submit</button>
         </form>
       </div>
     );
