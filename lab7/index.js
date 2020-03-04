@@ -51,7 +51,7 @@ App.get("/movies/year/:year", (req, res) => {
     // Set an "error" result to send back first
     let result = {"error": "Could not a movie with that year!"};
 
-    // findTitle() will return a Promise
+    // findYear() will return a Promise
     // Once it finishes, send the response
     database.findYear(req.params.year).then((movie) => {
 
