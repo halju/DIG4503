@@ -31,13 +31,13 @@ class Home extends React.Component {
     render() {
       return (
         <div>
-          <input type="text" id="nameInput" />
-          <button onClick={() => { this.getName() } }>search</button>
-          <div id="results"></div>
-          <input type="text" id="idInput" />
-          <button onClick={() => { this.getId() } }>search</button>
-          <div id="results2"></div>
-        </div>
+        <input type="text" id="nameInput" />
+        <button onClick={() => { this.getName() } }>Search</button>
+        <div id="results"></div>
+        <input type="text" id="idInput" />
+        <button onClick={() => { this.getId() } }>Search</button>
+        <div id="results2"></div>
+      </div>
       );
     }
   }
