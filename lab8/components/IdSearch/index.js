@@ -1,10 +1,10 @@
 import React from "react";
 
-class NameSearch extends React.Component {
-  NameSearch(event) {
+class IdSearch extends React.Component {
+  IdSearch(event) {
     event.preventDefault();
-    let element = document.querySelector("#pokemonName");
-    fetch("http://localhost:80/api/pokemon/name/" + element.value).then((res) => {
+    let element = document.querySelector("#pokemonId");
+    fetch("http://localhost:80/api/pokemon/id/" + element.value).then((res) => {
         return res.json();
     }).then((processed) => {
         let reporting = document.querySelector("#reportingArea");
@@ -14,13 +14,13 @@ class NameSearch extends React.Component {
             reporting.innerHTML = processed.name;
         }
     });
-}
+  }
   render() {
     return (
       <div className="form">
-        <form onSubmit={this.NameSearch}>
-          <label htmlFor="pokemonName">Pokemon Name:&nbsp;</label>
-          <input id="pokemonName" type="text" />&nbsp;
+        <form onSubmit={this.IdSearch}>
+          <label htmlFor="pokemonId">Pokemon ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+          <input id="pokemonId" type="text" />&nbsp;
           <button>Submit</button>
         </form>
       </div>
@@ -28,4 +28,4 @@ class NameSearch extends React.Component {
   } 
 }
 
-export default NameSearch;
+export default IdSearch;
