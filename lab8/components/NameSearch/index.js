@@ -4,7 +4,7 @@ class NameSearch extends React.Component {
   NameSearch(event) {
     event.preventDefault();
     let element = document.querySelector("#pokemonName");
-    fetch("http://localhost:3000/api/pokemon/name/" + element.value).then((res) => {
+    fetch("api/pokemon/name/" + element.value).then((res) => {
         return res.json();
     }).then((processed) => {
         let reporting = document.querySelector("#reportingArea");
