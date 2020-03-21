@@ -1,28 +1,25 @@
 import React from "react";
 
 class IdSearch extends React.Component {
-  IdSearch(event) {
-    event.preventDefault();
-    let element = document.querySelector("#pokemonId");
-    fetch("http://localhost:3000/api/pokemon/id/" + element.value).then((res) => {
-        return res.json();
-    }).then((processed) => {
-        let reporting = document.querySelector("#reportingArea");
+  IdSearch() {
+    let name = document.querySelector("#pokemonId");
+    fetch("/api/pokemon/id/" + name.value)
+    .then((res) => { return res.json(); } )
+    .then((processed) => {
+        let resultElement = document.querySelector("#results2");
         if(processed.error) {
-            reporting.innerHTML = processed.error;
+          resultElement.innerHTML = "Could not find!";
         } else {
-            reporting.innerHTML = processed.name;
+          resultElement.innerHTML = "This pokemon's name is " + processed.name;
         }
     });
   }
   render() {
     return (
-      <div className="form">
-        <form onSubmit={this.IdSearch}>
-          <label htmlFor="pokemonId">Pokemon ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-          <input id="pokemonId" type="text" />&nbsp;
-          <button>Submit</button>
-        </form>
+      <div>
+        Pokemon ID: <input type="text" id="pokemonId" />
+        <button onClick={() => { this.IdSearch() } }>search</button>
+        <div id="results2"></div>
       </div>
     );
   } 

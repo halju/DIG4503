@@ -1,28 +1,25 @@
 import React from "react";
 
 class NameSearch extends React.Component {
-  NameSearch(event) {
-    event.preventDefault();
-    let element = document.querySelector("#pokemonName");
-    fetch("http://localhost:3000/api/pokemon/name/" + element.value).then((res) => {
-        return res.json();
-    }).then((processed) => {
-        let reporting = document.querySelector("#reportingArea");
+  NameSearch() {
+    let name = document.querySelector("#pokemonName");
+    fetch("/api/pokemon/name/" + name.value)
+    .then((res) => { return res.json(); } )
+    .then((processed) => {
+        let resultElement = document.querySelector("#results");
         if(processed.error) {
-            reporting.innerHTML = processed.error;
+          resultElement.innerHTML = "Could not find!";
         } else {
-            reporting.innerHTML = processed.name;
+          resultElement.innerHTML = "This pokemon's ID is " + processed.id;
         }
     });
 }
   render() {
     return (
-      <div className="form">
-        <form onSubmit={this.NameSearch}>
-          <label htmlFor="pokemonName">Pokemon Name:&nbsp;</label>
-          <input id="pokemonName" type="text" />&nbsp;
-          <button>Submit</button>
-        </form>
+      <div>
+        Pokemon Name: <input type="text" id="pokemonName" />
+        <button onClick={() => { this.NameSearch() } }>search</button>
+        <div id="results"></div>
       </div>
     );
   } 
