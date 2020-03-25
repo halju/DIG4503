@@ -13,13 +13,13 @@ const SearchID = () => {
         <div>
           <h1 className={styles.head}>Pokemon Database</h1>
           <p>
-            Search for a pokemon by name
+            Search for a pokemon by ID
           </p>
           <p><IdSearch /></p>
           <p><Link href="SearchName">
             <a className={styles.a}>Search by Name</a>
           </Link></p>
-          <p><Link href="/TypeSearch">
+          <p><Link href="/SearchType">
             <a className={styles.a}>Search by Type</a>
           </Link></p>
         </div>

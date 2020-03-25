@@ -19,7 +19,7 @@ const SearchName = () => {
           <p><Link href="/SearchID">
             <a className={styles.a}>Search by ID</a>
           </Link></p>
-          <p><Link href="/TypeSearch">
+          <p><Link href="/SearchType">
             <a className={styles.a}>Search by Type</a>
           </Link></p>
         </div>
