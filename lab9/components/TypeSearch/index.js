@@ -17,7 +17,7 @@ class TypeSearch extends React.Component {
   render() {
     return (
       <div>
-        Pokemon ID: <input type="text" id="pokemonType" />
+        Pokemon Type: <input type="text" id="pokemonType" />
         <button onClick={() => { this.TypeSearch() } }>search</button>
         <div id="results3"></div>
       </div>
