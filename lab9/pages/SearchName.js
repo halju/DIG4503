@@ -1,8 +1,10 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import styles from '../components/pageCSS/pageCSS.module.css';
+import "./api/pokemon/name/[name].js";
+import NameSearch from "../components/NameSearch/index.js";
 
-const Home = () => {
+const SearchName = () => {
   return (
       <div className={styles.body}>
         <Head>
@@ -11,11 +13,9 @@ const Home = () => {
         <div>
           <h1 className={styles.head}>Pokemon Database</h1>
           <p>
-            Click one of the three links below to get started.
+            Search for a pokemon by name
           </p>
-          <p><Link href="/SearchName">
-            <a className={styles.a}>Search by Name</a>
-          </Link></p>
+          <p><NameSearch /></p>
           <p><Link href="/SearchID">
             <a className={styles.a}>Search by ID</a>
           </Link></p>
@@ -27,4 +27,4 @@ const Home = () => {
     );
   }
 
-export default Home;
+export default SearchName;
