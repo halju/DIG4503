@@ -5,11 +5,12 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-decoration: none;
     padding: 120px;
+    line-height: 90%;
 }
 
 .container {
     background-color: #f7f9fa;
-    padding: 10px;
+    padding: 20px;
     margin: 0px 200px;
 }
 
@@ -23,7 +24,7 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bold;
     text-align: center;
-    line-height: 60%;
+    line-height: 70%;
 }
 
 .subhead {
@@ -32,7 +33,7 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bold;
     text-align: center;
-    line-height: 60%;
+    line-height: 70%;
 }
 
 .divider {
