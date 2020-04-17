@@ -1,4 +1,5 @@
 import SearchResult from '../SearchResult';
+import styles from '../pageCSS/pageCSS.module.css'
 
 class NameSearch extends React.Component {
 
@@ -36,11 +37,11 @@ class NameSearch extends React.Component {
     render () {
       return (
         <div>
-          <p>Search for Name</p>
-          <input
+          <p className={styles.subhead}>Search by Name</p>
+          <p className={styles.align}><input
             type="text"
             onChange={(event) => { this.changeHandler(event.target.value); } } />
-          <button onClick={ () => { this.clickHandler() } }>Search</button>
+          <button onClick={ () => { this.clickHandler() } }>Search</button></p>
           {
               this.state.result.map((pokemon, index) => {
                 return (
