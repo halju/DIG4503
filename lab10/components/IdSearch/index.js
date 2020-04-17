@@ -1,28 +1,56 @@
-import React from "react";
+import SearchResult from '../SearchResult';
 
 class IdSearch extends React.Component {
-  IdSearch() {
-    let name = document.querySelector("#pokemonId");
-    fetch("/api/pokemon/id/" + name.value)
-    .then((res) => { return res.json(); } )
-    .then((processed) => {
-        let resultElement = document.querySelector("#results2");
-        if(processed.error) {
-          resultElement.innerHTML = "Could not find!";
-        } else {
-          resultElement.innerHTML = "This pokemon's name is " + processed.name;
-        }
-    });
-  }
-  render() {
-    return (
-      <div>
-        Pokemon ID: <input type="text" id="pokemonId" />
-        <button onClick={() => { this.IdSearch() } }>search</button>
-        <div id="results2"></div>
-      </div>
-    );
-  } 
-}
 
+    constructor (props) {
+        super (props);
+
+        this.state = {
+            searchValue: "",
+            result: []
+        };
+    }
+
+    changeHandler(value) {
+        this.setState(
+            {
+                searchValue: value
+            }
+        );
+    }
+
+    async clickHandler() {
+
+      let searchValue = this.state.searchValue;
+
+      if(searchValue === "") {
+        searchValue = '~';
+      }
+
+      let response = await fetch('/api/pokemon/id/' + searchValue);
+      let processed = await response.json();
+      
+      this.setState({result: processed});
+    }
+    
+    render () {
+      return (
+        <div>
+          <p>Search for ID</p>
+          <input
+            type="text"
+            onChange={(event) => { this.changeHandler(event.target.value); } } />
+          <button onClick={ () => { this.clickHandler() } }>Search</button>
+          {
+              this.state.result.map((pokemon, index) => {
+                return (
+                  <SearchResult pokemon={pokemon} number={index} />
+                )
+              })
+            }
+        </div>
+      );
+    }
+}
+  
 export default IdSearch;

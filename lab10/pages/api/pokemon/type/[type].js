@@ -1,20 +1,16 @@
 import pokemon from 'json-pokemon';
 
 function response(req, res) {
-    let type = req.query.type;
-    let results = [];
-    let result = {"error": "Could not find name."};
-
-    for(let i = 0; i < pokemon.length; i++) {
-        for(let k = 0; k < pokemon[i].typeList.length; k++) {
-            if (type == pokemon[i].typeList) {
-                results.push(pokemon[i].typeList);
-            } else if (type == null) {
-                res.json(result);
-            }
+    let result = [];
+    const type = req.query.type;
+    pokemon.forEach((pokemonObject) => {
+      pokemonObject.typeList.forEach((typeProperty) => {
+        if(type === typeProperty) {
+          result.push(pokemonObject);
         }
-    }
-    res.json(results);
+      });
+    });
+    res.json(result);
 }
 
 export default response;
