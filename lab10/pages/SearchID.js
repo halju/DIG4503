@@ -3,6 +3,7 @@ import styles from '../components/pageCSS/pageCSS.module.css';
 import PageHeader from '../components/PageHeader/index.js'
 import "./api/pokemon/id/[id].js";
 import IdSearch from "../components/IdSearch/index.js";
+import RanSprite from '../components/RanSprite/index.js';
 
 const SearchId = () => {
   return (
@@ -13,7 +14,7 @@ const SearchId = () => {
       <div className={styles.container}>
       <PageHeader />
         <h1 className={styles.head}>Hal's Pokemon Database</h1>
-        <p className={styles.divider}></p>
+        <div className={styles.align}><RanSprite /></div>
         <p><IdSearch /></p>
       </div>
     </div>

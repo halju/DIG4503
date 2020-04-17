@@ -23,7 +23,7 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bold;
     text-align: center;
-    line-height: 80%;
+    line-height: 60%;
 }
 
 .subhead {
@@ -32,7 +32,7 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bold;
     text-align: center;
-    line-height: 80%;
+    line-height: 60%;
 }
 
 .divider {
@@ -47,8 +47,8 @@
     display:inline-block;
     margin: 10px;
     text-align: center;
-    color: #2b458c;
-    font-size: 16px;
+    color: #212e4f;
+    font-size: 22px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: normal;
     font-weight: bold;
@@ -59,39 +59,12 @@
     display:inline-block;
     margin: 10px;
     text-align: center;
-    color: #446cc2;
-    font-size: 16px;
+    color: #3d5375;
+    font-size: 22px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: normal;
     font-weight: bold;
     text-decoration:none;
-}
-
-.a {
-    color: #2b458c;
-    font-size: 16px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.a:hover {
-    color: #446cc2;
-    font-size: 16px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.a:visited {
-    color: #2b458c;
-    font-size: 16px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    text-decoration: none;
 }
 
 .align {
