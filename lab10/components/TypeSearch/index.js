@@ -1,28 +1,55 @@
 import React from "react";
 
 class TypeSearch extends React.Component {
-  TypeSearch() {
-    let name = document.querySelector("#pokemonType");
-    fetch("/api/pokemon/type/" + name.value)
-    .then((res) => { return res.json(); } )
-    .then((processed) => {
-        let resultElement = document.querySelector("#results3");
-        if(processed.error) {
-          resultElement.innerHTML = "Could not find!";
-        } else {
-          resultElement.innerHTML = processed.name;
-        }
-    });
+  constructor (props) {
+      super (props)
+
+      this.state = {
+          searchValue: "",
+          result: []
+      };
   }
-  render() {
+
+  changeHandler(value) {
+      this.setState(
+          {
+              searchValue: value
+          }
+      );
+  }
+
+  async clickHandler() {
+
+    let searchValue = this.state.searchValue;
+
+    if(searchValue === "") {
+      searchValue = '~';
+    }
+
+    let response = await fetch('/api/pokemon/type/' + searchValue);
+    let processed = await response.json();
+    
+    this.setState({result: processed});
+  }
+  
+  render () {
     return (
-      <div>
-        Pokemon Type: <input type="text" id="pokemonType" />
-        <button onClick={() => { this.TypeSearch() } }>search</button>
-        <div id="results3"></div>
+      <div className={styles.searchBackground}>
+        <p>Search for Type</p>
+        <input
+          type="text"
+          onChange={(event) => { this.changeHandler(event.target.value); } } />
+        <button onClick={ () => { this.clickHandler() } } className={styles.navLink}>Search</button>
+          {
+            this.state.result.map((pokemon, index) => {
+              return (
+                <SearchResult pokemon={pokemon} number={index} />
+              )
+            })
+          }
       </div>
     );
-  } 
+  }
 }
 
 export default TypeSearch;
